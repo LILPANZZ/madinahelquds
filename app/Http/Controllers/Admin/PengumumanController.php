@@ -27,7 +27,7 @@ class PengumumanController extends Controller
         $validated = $request->validate([
             'judul' => 'required|string|max:255',
             'isi' => 'required|string',
-            'tanggal_mulai' => 'required|date',
+            'tanggal_mulai' => 'required|date|after_or_equal:today',
             'tanggal_selesai' => 'nullable|date|after_or_equal:tanggal_mulai',
             'kategori' => 'required|in:umum,akademik,kegiatan,penting',
             'status' => 'required|in:aktif,nonaktif',

@@ -54,13 +54,13 @@
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal Mulai</label>
-                        <input type="date" name="tanggal_mulai" id="prev-tgl-mulai" value="{{ old('tanggal_mulai', date('Y-m-d')) }}"
+                        <input type="date" name="tanggal_mulai" id="prev-tgl-mulai" value="{{ old('tanggal_mulai', date('Y-m-d')) }}" min="{{ date('Y-m-d') }}"
                             class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                             oninput="updatePreview()">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal Selesai (Opsional)</label>
-                        <input type="date" name="tanggal_selesai" id="prev-tgl-selesai" value="{{ old('tanggal_selesai') }}"
+                        <input type="date" name="tanggal_selesai" id="prev-tgl-selesai" value="{{ old('tanggal_selesai') }}" min="{{ date('Y-m-d') }}"
                             class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                             oninput="updatePreview()">
                     </div>
