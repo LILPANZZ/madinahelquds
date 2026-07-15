@@ -65,6 +65,7 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-[#1e3a5f]/90 to-transparent flex items-end p-4">
                     <div>
                         <span id="preview-judul-text" class="text-white text-sm font-medium block">Judul Foto</span>
+                        <p id="preview-deskripsi-text" class="text-white text-xs mt-1 line-clamp-2">Deskripsi Foto</p>
                     </div>
                 </div>
             </div>
@@ -120,12 +121,15 @@
 <script>
 function updatePreview() {
     const judul = document.getElementById('prev-judul').value || 'Judul Foto';
+    const deskripsi = document.getElementById('prev-deskripsi').value || 'Deskripsi Foto';
     document.getElementById('preview-judul-text').textContent = judul;
+    document.getElementById('preview-deskripsi-text').textContent = deskripsi;
 }
 
 function resetPreview() {
     document.getElementById('preview-img-new').src = 'https://placehold.co/400x400/e5e7eb/9ca3af?text=Foto+Galeri';
     document.getElementById('preview-judul-text').textContent = 'Judul Foto';
+    document.getElementById('preview-deskripsi-text').textContent = 'Deskripsi Foto';
 }
 
 function previewImage(input, targetId) {
@@ -138,6 +142,7 @@ function previewImage(input, targetId) {
 
 function updateEditPreview(id, field, value) {
     if (field === 'judul') document.getElementById('edit-judul-' + id).textContent = value || 'Judul Foto';
+    if (field === 'deskripsi') document.getElementById('edit-deskripsi-' + id).textContent = value || 'Deskripsi Foto';
 }
 
 function editGaleri(id) {
@@ -188,7 +193,8 @@ document.querySelectorAll('[id^="edit-modal-"]').forEach(modal => {
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-1">Deskripsi</label>
-                                    <textarea name="deskripsi" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">{{ $galeri->deskripsi }}</textarea>
+                                    <textarea name="deskripsi" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                                        oninput="updateEditPreview({{ $galeri->id }}, 'deskripsi', this.value)">{{ $galeri->deskripsi }}</textarea>
                                 </div>
                                 <div>
                                     @php
@@ -238,6 +244,7 @@ document.querySelectorAll('[id^="edit-modal-"]').forEach(modal => {
                                         <div class="absolute inset-0 bg-gradient-to-t from-[#1e3a5f]/90 to-transparent flex items-end p-4">
                                             <div>
                                                 <span id="edit-judul-{{ $galeri->id }}" class="text-white text-sm font-medium block">{{ $galeri->judul }}</span>
+                                                <p id="edit-deskripsi-{{ $galeri->id }}" class="text-white text-xs mt-1 line-clamp-2">{{ $galeri->deskripsi }}</p>
                                             </div>
                                         </div>
                                     </div>
