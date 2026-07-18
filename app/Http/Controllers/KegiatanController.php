@@ -24,9 +24,6 @@ class KegiatanController extends Controller
     {
         $validated = $request->validate([
             'judul' => 'required|string|max:255',
-            'tanggal' => 'required|date',
-            'waktu_mulai' => 'required',
-            'waktu_selesai' => 'required',
             'tempat' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'foto' => 'required|array',
@@ -53,9 +50,6 @@ class KegiatanController extends Controller
     {
         $validated = $request->validate([
             'judul' => 'required|string|max:255',
-            'tanggal' => 'required|date',
-            'waktu_mulai' => 'required',
-            'waktu_selesai' => 'required',
             'tempat' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'foto' => 'nullable|array',

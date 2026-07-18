@@ -22,21 +22,7 @@
                     <input type="text" name="judul" id="prev-judul" oninput="updatePreview()"
                         class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal</label>
-                    <input type="date" name="tanggal" id="prev-tanggal" oninput="updatePreview()"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Waktu Mulai</label>
-                    <input type="time" name="waktu_mulai" id="prev-waktu-mulai" oninput="updatePreview()"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Waktu Selesai</label>
-                    <input type="time" name="waktu_selesai" id="prev-waktu-selesai" oninput="updatePreview()"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                </div>
+
                 <div class="md:col-span-2">
                     <label class="block text-sm font-medium text-gray-700 mb-1">Tempat</label>
                     <input type="text" name="tempat" id="prev-tempat" oninput="updatePreview()"
@@ -82,14 +68,7 @@
                 <div class="flex-1">
                     <h4 id="preview-judul-text" class="font-semibold text-gray-800">Judul Kegiatan</h4>
                     <p class="text-sm text-gray-500 mt-1">
-                        <span class="flex items-center gap-1">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                            <span id="preview-tanggal-text">Tanggal</span>
-                        </span>
-                        <span class="flex items-center gap-1 mt-1">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            <span id="preview-waktu-text">Waktu Mulai - Waktu Selesai WIB</span>
-                        </span>
+
                         <span class="flex items-center gap-1 mt-1">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                             <span id="preview-tempat-text">Tempat</span>
@@ -113,14 +92,7 @@
                         <div>
                             <h4 class="font-semibold text-gray-800">{{ $kegiatan->judul }}</h4>
                             <p class="text-sm text-gray-500 mt-1">
-                                <span class="flex items-center gap-1">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                                    {{ $kegiatan->tanggal->format('d M Y') }}
-                                </span>
-                                <span class="flex items-center gap-1 mt-1">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                    {{ $kegiatan->waktu_mulai->format('H:i') }} - {{ $kegiatan->waktu_selesai->format('H:i') }} WIB
-                                </span>
+
                                 <span class="flex items-center gap-1 mt-1">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                                     {{ $kegiatan->tempat }}
@@ -174,24 +146,7 @@
                                         class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                         oninput="updateEditPreview({{ $kegiatan->id }}, 'judul', this.value)" required>
                                 </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal</label>
-                                    <input type="date" name="tanggal" value="{{ $kegiatan->tanggal->format('Y-m-d') }}"
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        oninput="updateEditPreview({{ $kegiatan->id }}, 'tanggal', this.value)" required>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-1">Waktu Mulai</label>
-                                    <input type="time" name="waktu_mulai" value="{{ $kegiatan->waktu_mulai->format('H:i') }}"
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        oninput="updateEditPreview({{ $kegiatan->id }}, 'waktu_mulai', this.value)" required>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-1">Waktu Selesai</label>
-                                    <input type="time" name="waktu_selesai" value="{{ $kegiatan->waktu_selesai->format('H:i') }}"
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        oninput="updateEditPreview({{ $kegiatan->id }}, 'waktu_selesai', this.value)" required>
-                                </div>
+
                                 <div class="col-span-2">
                                     <label class="block text-sm font-medium text-gray-700 mb-1">Tempat</label>
                                     <input type="text" name="tempat" value="{{ $kegiatan->tempat }}"
@@ -252,14 +207,7 @@
                                     <div class="flex-1">
                                         <h4 id="edit-judul-{{ $kegiatan->id }}" class="font-semibold text-gray-800">{{ $kegiatan->judul }}</h4>
                                         <p class="text-sm text-gray-500 mt-1">
-                                            <span class="flex items-center gap-1">
-                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                                                <span id="edit-tanggal-{{ $kegiatan->id }}">{{ $kegiatan->tanggal->format('d M Y') }}</span>
-                                            </span>
-                                            <span class="flex items-center gap-1 mt-1">
-                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                                <span id="edit-waktu-{{ $kegiatan->id }}">{{ $kegiatan->waktu_mulai->format('H:i') }} - {{ $kegiatan->waktu_selesai->format('H:i') }} WIB</span>
-                                            </span>
+
                                             <span class="flex items-center gap-1 mt-1">
                                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                                                 <span id="edit-tempat-{{ $kegiatan->id }}">{{ $kegiatan->tempat }}</span>
@@ -278,33 +226,19 @@
 
 @section('scripts')
 <script>
-// State untuk waktu edit
-const editWaktuMulai = {};
-const editWaktuSelesai = {};
-
 function updatePreview() {
     const judul = document.getElementById('prev-judul').value || 'Judul Kegiatan';
-    const tanggal = document.getElementById('prev-tanggal').value;
-    const waktuMulai = document.getElementById('prev-waktu-mulai').value || '--:--';
-    const waktuSelesai = document.getElementById('prev-waktu-selesai').value || '--:--';
     const tempat = document.getElementById('prev-tempat').value || 'Tempat';
     const deskripsi = document.getElementById('prev-deskripsi').value || 'Deskripsi kegiatan...';
 
     document.getElementById('preview-judul-text').textContent = judul;
-    document.getElementById('preview-waktu-text').textContent = waktuMulai + ' - ' + waktuSelesai + ' WIB';
     document.getElementById('preview-tempat-text').textContent = tempat;
     document.getElementById('preview-deskripsi-text').textContent = deskripsi.substring(0, 80) + (deskripsi.length > 80 ? '...' : '');
-    if (tanggal) {
-        const d = new Date(tanggal);
-        document.getElementById('preview-tanggal-text').textContent = d.toLocaleDateString('id-ID', {day:'2-digit', month:'long', year:'numeric'});
-    }
 }
 
 function resetPreview() {
     document.getElementById('preview-img-new').src = 'https://placehold.co/80x80/e5e7eb/9ca3af?text=Foto';
     document.getElementById('preview-judul-text').textContent = 'Judul Kegiatan';
-    document.getElementById('preview-tanggal-text').textContent = 'Tanggal';
-    document.getElementById('preview-waktu-text').textContent = 'Waktu Mulai - Waktu Selesai WIB';
     document.getElementById('preview-tempat-text').textContent = 'Tempat';
     document.getElementById('preview-deskripsi-text').textContent = 'Deskripsi kegiatan...';
 }
@@ -321,19 +255,9 @@ function updateEditPreview(id, field, value) {
     if (field === 'judul') document.getElementById('edit-judul-' + id).textContent = value || 'Judul Kegiatan';
     if (field === 'tempat') document.getElementById('edit-tempat-' + id).textContent = value || 'Tempat';
     if (field === 'deskripsi') document.getElementById('edit-deskripsi-' + id).textContent = (value || '').substring(0, 80) + (value.length > 80 ? '...' : '');
-    if (field === 'tanggal' && value) {
-        const d = new Date(value);
-        document.getElementById('edit-tanggal-' + id).textContent = d.toLocaleDateString('id-ID', {day:'2-digit', month:'long', year:'numeric'});
-    }
-    if (field === 'waktu_mulai') { editWaktuMulai[id] = value; updateEditWaktu(id); }
-    if (field === 'waktu_selesai') { editWaktuSelesai[id] = value; updateEditWaktu(id); }
 }
 
-function updateEditWaktu(id) {
-    const mulai = editWaktuMulai[id] || '--:--';
-    const selesai = editWaktuSelesai[id] || '--:--';
-    document.getElementById('edit-waktu-' + id).textContent = mulai + ' - ' + selesai + ' WIB';
-}
+
 
 function openEditModal(id) {
     const modal = document.getElementById('editModal-' + id);
@@ -376,24 +300,7 @@ function closeEditModal(id) {
                                         class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                         oninput="updateEditPreview({{ $kegiatan->id }}, 'judul', this.value)" required>
                                 </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal</label>
-                                    <input type="date" name="tanggal" value="{{ $kegiatan->tanggal->format('Y-m-d') }}"
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        oninput="updateEditPreview({{ $kegiatan->id }}, 'tanggal', this.value)" required>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-1">Waktu Mulai</label>
-                                    <input type="time" name="waktu_mulai" value="{{ $kegiatan->waktu_mulai->format('H:i') }}"
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        oninput="updateEditPreview({{ $kegiatan->id }}, 'waktu_mulai', this.value)" required>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-1">Waktu Selesai</label>
-                                    <input type="time" name="waktu_selesai" value="{{ $kegiatan->waktu_selesai->format('H:i') }}"
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        oninput="updateEditPreview({{ $kegiatan->id }}, 'waktu_selesai', this.value)" required>
-                                </div>
+
                                 <div class="col-span-2">
                                     <label class="block text-sm font-medium text-gray-700 mb-1">Tempat</label>
                                     <input type="text" name="tempat" value="{{ $kegiatan->tempat }}"
@@ -436,14 +343,7 @@ function closeEditModal(id) {
                                     <div class="flex-1">
                                         <h4 id="edit-judul-{{ $kegiatan->id }}" class="font-semibold text-gray-800">{{ $kegiatan->judul }}</h4>
                                         <p class="text-sm text-gray-500 mt-1">
-                                            <span class="flex items-center gap-1">
-                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                                                <span id="edit-tanggal-{{ $kegiatan->id }}">{{ $kegiatan->tanggal->format('d M Y') }}</span>
-                                            </span>
-                                            <span class="flex items-center gap-1 mt-1">
-                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                                <span id="edit-waktu-{{ $kegiatan->id }}">{{ $kegiatan->waktu_mulai->format('H:i') }} - {{ $kegiatan->waktu_selesai->format('H:i') }} WIB</span>
-                                            </span>
+
                                             <span class="flex items-center gap-1 mt-1">
                                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                                                 <span id="edit-tempat-{{ $kegiatan->id }}">{{ $kegiatan->tempat }}</span>

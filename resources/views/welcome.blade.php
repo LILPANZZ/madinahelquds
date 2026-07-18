@@ -461,7 +461,7 @@
                      data-images="{{ implode(',', array_map(function($f) { return asset('storage/' . $f); },  (is_array($kegiatan->foto) ? $kegiatan->foto : (is_string($kegiatan->foto) && $kegiatan->foto ? [$kegiatan->foto] : [])))) }}"
                      data-judul="{{ $kegiatan->judul }}"
                      data-deskripsi="{{ $kegiatan->deskripsi }}"
-                     data-tanggal="{{ $kegiatan->tanggal->format('d M Y') }}"
+
                      data-tempat="{{ $kegiatan->tempat }}">
                     <img src="{{ asset('storage/' . ((is_array($kegiatan->foto) && count($kegiatan->foto) > 0 ? $kegiatan->foto[0] : (is_string($kegiatan->foto) && $kegiatan->foto ? $kegiatan->foto : '')))) }}" alt="{{ $kegiatan->judul }}" class="w-full h-40 object-cover" onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300'">
                     <div class="p-4">
@@ -614,7 +614,7 @@
                 <div class="p-6 overflow-y-auto flex-1 min-h-0">
                     <div class="flex justify-between items-start mb-2">
                         <h3 id="e-lightbox-judul" class="text-2xl font-bold text-gray-900"></h3>
-                        <span id="e-lightbox-tanggal" class="text-xs font-medium bg-green-100 text-green-700 px-3 py-1 rounded-full whitespace-nowrap ml-4"></span>
+
                     </div>
                     <p id="e-lightbox-tempat" class="text-sm font-medium text-gray-500 mb-4 flex items-center gap-1"></p>
                     <div id="e-lightbox-deskripsi" class="text-gray-700 text-base leading-relaxed whitespace-pre-wrap"></div>
@@ -791,7 +791,7 @@ function openEkstraLightbox(element) {
     }
     document.getElementById('e-lightbox-judul').textContent = element.getAttribute('data-judul');
     document.getElementById('e-lightbox-deskripsi').innerHTML = element.getAttribute('data-deskripsi');
-    document.getElementById('e-lightbox-tanggal').textContent = element.getAttribute('data-tanggal');
+
     
     const tempat = element.getAttribute('data-tempat');
     const tempatEl = document.getElementById('e-lightbox-tempat');

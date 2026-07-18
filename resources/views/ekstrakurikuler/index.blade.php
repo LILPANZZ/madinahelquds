@@ -78,11 +78,11 @@
                      data-images="{{ implode(',', array_map(function($f) { return asset('storage/' . $f); },  (is_array($kegiatan->foto) ? $kegiatan->foto : (is_string($kegiatan->foto) && $kegiatan->foto ? [$kegiatan->foto] : [])))) }}"
                      data-judul="{{ $kegiatan->judul }}"
                      data-deskripsi="{{ $kegiatan->deskripsi }}"
-                     data-tanggal="{{ $kegiatan->tanggal->format('d M Y') }}"
+
                      data-tempat="{{ $kegiatan->tempat }}">
                     <img src="{{ asset('storage/' . ((is_array($kegiatan->foto) && count($kegiatan->foto) > 0 ? $kegiatan->foto[0] : (is_string($kegiatan->foto) && $kegiatan->foto ? $kegiatan->foto : '')))) }}" alt="{{ $kegiatan->judul }}" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400'">
                     <div class="p-5">
-                        <span class="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded">{{ $kegiatan->tanggal->format('d M Y') }}</span>
+
                         <h3 class="font-bold text-gray-900 mt-2 text-lg">{{ $kegiatan->judul }}</h3>
                         <p class="text-gray-600 text-sm mt-2">{{ Str::limit(strip_tags($kegiatan->deskripsi), 100) }}</p>
                         @if($kegiatan->tempat)
@@ -120,7 +120,7 @@
                 <div class="p-6 overflow-y-auto flex-1">
                     <div class="flex justify-between items-start mb-2">
                         <h3 id="lightbox-judul" class="text-2xl font-bold text-gray-900"></h3>
-                        <span id="lightbox-tanggal" class="text-xs font-medium bg-green-100 text-green-700 px-3 py-1 rounded-full whitespace-nowrap ml-4"></span>
+
                     </div>
                     <p id="lightbox-tempat" class="text-sm font-medium text-gray-500 mb-4 flex items-center gap-1"></p>
                     <div id="lightbox-deskripsi" class="text-gray-700 text-base leading-relaxed whitespace-pre-wrap"></div>
@@ -150,7 +150,7 @@ function openLightbox(element) {
     document.getElementById('lightbox-judul').textContent = element.getAttribute('data-judul');
     document.getElementById('lightbox-deskripsi').innerHTML = element.getAttribute('data-deskripsi');
     
-    document.getElementById('lightbox-tanggal').textContent = element.getAttribute('data-tanggal');
+
     
     const tempat = element.getAttribute('data-tempat');
     const tempatEl = document.getElementById('lightbox-tempat');
