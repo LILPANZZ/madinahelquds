@@ -81,7 +81,7 @@
                 @forelse($prestasis as $item)
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition cursor-pointer"
                      onclick="openLightbox(this)"
-                     data-images="{{ implode(',', (is_array($item->gambar) ? $item->gambar : (is_string($item->gambar) && $item->gambar ? [$item->gambar] : []))) }}"
+                     data-images="{{ implode(',', array_map(function($f) { return asset('storage/' . $f); }, (is_array($item->gambar) ? $item->gambar : (is_string($item->gambar) && $item->gambar ? [$item->gambar] : [])))) }}"
                      data-judul="{{ $item->judul_prestasi }}"
                      data-deskripsi="{{ $item->deskripsi }}"
                      data-tanggal="{{ $item->tanggal ? $item->tanggal->format('d M Y') : '' }}"

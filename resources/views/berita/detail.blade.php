@@ -53,7 +53,7 @@
                             x-transition:leave="transition ease-in-out duration-500"
                             x-transition:leave-start="opacity-100"
                             x-transition:leave-end="opacity-0"
-                            :src="'/storage/' + img" 
+                            :src="'{{ asset('storage') }}/' + img" 
                             alt="{{ $berita->judul }}" 
                             class="absolute inset-0 w-full h-full object-cover" 
                             onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800'">
