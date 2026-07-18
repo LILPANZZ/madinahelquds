@@ -232,6 +232,8 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
 Route::get('/test-asset', function() { return asset('storage/test.jpg'); });
 
- 
-
-
+// Route bantuan untuk membuat symlink storage di hosting
+Route::get('/create-storage-link', function () {
+    \Illuminate\Support\Facades\Artisan::call('storage:link');
+    return 'Symlink storage berhasil dibuat!';
+});
