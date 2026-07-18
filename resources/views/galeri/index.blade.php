@@ -81,10 +81,10 @@
                 @forelse($galeris as $galeri)
                 <div class="relative group overflow-hidden rounded-xl aspect-square cursor-pointer"
                      onclick="openLightbox(this)"
-                     data-images="{{ implode(',', array_map(function($f) { return '/storage/' . $f; },  (is_array($galeri->gambar) ? $galeri->gambar : (is_string($galeri->gambar) && $galeri->gambar ? [$galeri->gambar] : [])))) }}"
+                     data-images="{{ implode(',', array_map(function($f) { return asset('storage/' . $f); },  (is_array($galeri->gambar) ? $galeri->gambar : (is_string($galeri->gambar) && $galeri->gambar ? [$galeri->gambar] : [])))) }}"
                      data-judul="{{ $galeri->judul }}"
                      data-deskripsi="{{ $galeri->deskripsi }}">
-                    <img src="{{ '/storage/' . ((is_array($galeri->gambar) && count($galeri->gambar) > 0 ? $galeri->gambar[0] : (is_string($galeri->gambar) && $galeri->gambar ? $galeri->gambar : ''))) }}" alt="{{ $galeri->judul }}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=300'">
+                    <img src="{{ asset('storage/' . ((is_array($galeri->gambar) && count($galeri->gambar) > 0 ? $galeri->gambar[0] : (is_string($galeri->gambar) && $galeri->gambar ? $galeri->gambar : '')))) }}" alt="{{ $galeri->judul }}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=300'">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#1e3a5f]/80 to-transparent opacity-70 hover:opacity-100 transition duration-300 flex items-end p-4">
                         <div>
                             <h3 class="text-white font-medium text-sm">{{ $galeri->judul }}</h3>

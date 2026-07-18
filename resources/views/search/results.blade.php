@@ -108,7 +108,7 @@
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                         @foreach($beritas as $item)
                         <a href="{{ route('berita.detail', $item->judul) }}" class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition block">
-                            <img src="{{ '/storage/' . ((is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : (is_string($item->gambar) && $item->gambar ? $item->gambar : ''))) }}" alt="{{ $item->judul }}" class="w-full h-40 object-cover" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400'">
+                            <img src="{{ asset('storage/' . ((is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : (is_string($item->gambar) && $item->gambar ? $item->gambar : '')))) }}" alt="{{ $item->judul }}" class="w-full h-40 object-cover" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400'">
                             <div class="p-4">
                                 <span class="text-xs text-green-600 font-medium">{{ $item->tanggal->format('d M Y') }}</span>
                                 <h3 class="font-bold text-gray-900 mt-1">{{ $item->judul }}</h3>
@@ -131,12 +131,12 @@
                         @foreach($kegiatans as $item)
                         <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition cursor-pointer"
                              onclick="openEkstraLightbox(this)"
-                             data-images="{{ implode(',', array_map(function($f) { return '/storage/' . $f; },  (is_array($item->foto) ? $item->foto : (is_string($item->foto) && $item->foto ? [$item->foto] : [])))) }}"
+                             data-images="{{ implode(',', array_map(function($f) { return asset('storage/' . $f); },  (is_array($item->foto) ? $item->foto : (is_string($item->foto) && $item->foto ? [$item->foto] : [])))) }}"
                              data-judul="{{ $item->judul }}"
                              data-deskripsi="{{ $item->deskripsi }}"
                              data-tanggal="{{ $item->tanggal ? $item->tanggal->format('d M Y') : '' }}"
                              data-tempat="{{ $item->tempat }}">
-                            <img src="{{ '/storage/' . ((is_array($item->foto) && count($item->foto) > 0 ? $item->foto[0] : (is_string($item->foto) && $item->foto ? $item->foto : ''))) }}" alt="{{ $item->judul }}" class="w-full h-40 object-cover" onerror="this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400'">
+                            <img src="{{ asset('storage/' . ((is_array($item->foto) && count($item->foto) > 0 ? $item->foto[0] : (is_string($item->foto) && $item->foto ? $item->foto : '')))) }}" alt="{{ $item->judul }}" class="w-full h-40 object-cover" onerror="this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400'">
                             <div class="p-4">
                                 <span class="text-xs text-blue-600 font-medium">{{ $item->tanggal->format('d M Y') }}</span>
                                 <h3 class="font-bold text-gray-900 mt-1">{{ $item->judul }}</h3>
@@ -159,12 +159,12 @@
                         @foreach($fasilitas as $item)
                         <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition cursor-pointer"
                              onclick="openFasilitasLightbox(this)"
-                             data-images="{{ implode(',', array_map(function($f) { return '/storage/' . $f; },  (is_array($item->gambar) ? $item->gambar : (is_string($item->gambar) && $item->gambar ? [$item->gambar] : [])))) }}"
+                             data-images="{{ implode(',', array_map(function($f) { return asset('storage/' . $f); },  (is_array($item->gambar) ? $item->gambar : (is_string($item->gambar) && $item->gambar ? [$item->gambar] : [])))) }}"
                              data-judul="{{ $item->nama }}"
                              data-deskripsi="{{ $item->deskripsi }}"
                              data-kapasitas="{{ $item->jumlah_kapasitas }}"
                              data-kategori="{{ $item->kategori }}">
-                            <img src="{{ '/storage/' . ((is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : (is_string($item->gambar) && $item->gambar ? $item->gambar : ''))) }}" alt="{{ $item->nama }}" class="w-full h-40 object-cover" onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?w=400'">
+                            <img src="{{ asset('storage/' . ((is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : (is_string($item->gambar) && $item->gambar ? $item->gambar : '')))) }}" alt="{{ $item->nama }}" class="w-full h-40 object-cover" onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?w=400'">
                             <div class="p-4">
                                 <span class="text-xs text-purple-600 font-medium bg-purple-50 px-2 py-1 rounded">{{ $item->kategori }}</span>
                                 <h3 class="font-bold text-gray-900 mt-2">{{ $item->nama }}</h3>
@@ -187,10 +187,10 @@
                         @foreach($galeris as $item)
                         <div class="relative group overflow-hidden rounded-xl aspect-square cursor-pointer"
                              onclick="openGaleriLightbox(this)"
-                             data-images="{{ implode(',', array_map(function($f) { return '/storage/' . $f; },  (is_array($item->gambar) ? $item->gambar : (is_string($item->gambar) && $item->gambar ? [$item->gambar] : [])))) }}"
+                             data-images="{{ implode(',', array_map(function($f) { return asset('storage/' . $f); },  (is_array($item->gambar) ? $item->gambar : (is_string($item->gambar) && $item->gambar ? [$item->gambar] : [])))) }}"
                              data-judul="{{ $item->judul }}"
                              data-deskripsi="{{ $item->deskripsi }}">
-                            <img src="{{ '/storage/' . ((is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : (is_string($item->gambar) && $item->gambar ? $item->gambar : ''))) }}" alt="{{ $item->judul }}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=300'">
+                            <img src="{{ asset('storage/' . ((is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : (is_string($item->gambar) && $item->gambar ? $item->gambar : '')))) }}" alt="{{ $item->judul }}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=300'">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#1e3a5f]/80 to-transparent opacity-70 hover:opacity-100 transition duration-300 flex items-end p-3">
                                 <div>
                                     <span class="text-xs text-orange-400 font-medium">{{ $item->kategori }}</span>
@@ -214,12 +214,12 @@
                         @foreach($prestasis as $item)
                         <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition cursor-pointer"
                              onclick="openPrestasiLightbox(this)"
-                             data-images="{{ implode(',', array_map(function($f) { return '/storage/' . $f; },  (is_array($item->gambar) ? $item->gambar : (is_string($item->gambar) && $item->gambar ? [$item->gambar] : [])))) }}"
+                             data-images="{{ implode(',', array_map(function($f) { return asset('storage/' . $f); },  (is_array($item->gambar) ? $item->gambar : (is_string($item->gambar) && $item->gambar ? [$item->gambar] : [])))) }}"
                              data-judul="{{ $item->judul_prestasi }}"
                              data-deskripsi="{{ $item->deskripsi }}"
                              data-tanggal="{{ $item->tanggal ? $item->tanggal->format('d M Y') : '' }}"
                              data-kategori="{{ $item->kategori }}">
-                            <img src="{{ '/storage/' . ((is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : (is_string($item->gambar) && $item->gambar ? $item->gambar : ''))) }}" alt="{{ $item->judul_prestasi }}" class="w-full h-40 object-cover" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400'">
+                            <img src="{{ asset('storage/' . ((is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : (is_string($item->gambar) && $item->gambar ? $item->gambar : '')))) }}" alt="{{ $item->judul_prestasi }}" class="w-full h-40 object-cover" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400'">
                             <div class="p-4">
                                 <span class="text-xs text-yellow-600 font-medium bg-yellow-50 px-2 py-1 rounded">{{ $item->kategori }}</span>
                                 <h3 class="font-bold text-gray-900 mt-2">{{ $item->judul_prestasi }}</h3>

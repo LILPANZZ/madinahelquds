@@ -26,7 +26,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($beritas as $berita)
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <img src="{{ '/storage/' . (is_array($berita->gambar) && count($berita->gambar) > 0 ? $berita->gambar[0] : '') }}" alt="{{ $berita->judul }}" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400'">
+                    <img src="{{ asset('storage/' . (is_array($berita->gambar) && count($berita->gambar) > 0 ? $berita->gambar[0] : '')) }}" alt="{{ $berita->judul }}" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400'">
                     <div class="p-5">
                         <span class="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded">{{ $berita->tanggal->format('d M Y') }}</span>
                         <h3 class="font-bold text-gray-900 mt-2 text-lg">{{ $berita->judul }}</h3>

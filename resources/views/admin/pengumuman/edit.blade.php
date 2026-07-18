@@ -74,7 +74,7 @@
                         <span class="text-sm text-gray-700">{{ basename($pengumuman->lampiran) }}</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <a href="{{ '/storage/' . $pengumuman->lampiran }}" target="_blank" class="text-green-600 text-sm hover:underline">Lihat</a>
+                        <a href="{{ asset('storage/' . $pengumuman->lampiran) }}" target="_blank" class="text-green-600 text-sm hover:underline">Lihat</a>
                         <button type="button" onclick="document.getElementById('lampiran-container').style.display='none'; document.getElementById('delete-lampiran').value='1';" style="background-color: #ef4444; color: white; border-radius: 9999px; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; cursor: pointer; border: 1px solid white;" title="Hapus lampiran ini">X</button>
                     </div>
                 </div>

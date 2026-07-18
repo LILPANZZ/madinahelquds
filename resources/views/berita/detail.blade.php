@@ -212,7 +212,7 @@
                         @if($item->id != $berita->id)
                         <a href="{{ route('berita.detail', $item->judul) }}" class="flex gap-3 group">
                             <div class="w-20 h-16 flex-shrink-0 rounded-lg overflow-hidden">
-                                <img src="{{ '/storage/' . (is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : '') }}" alt="{{ $item->judul }}" class="w-full h-full object-cover group-hover:scale-110 transition" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=100'">
+                                <img src="{{ asset('storage/' . (is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : '')) }}" alt="{{ $item->judul }}" class="w-full h-full object-cover group-hover:scale-110 transition" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=100'">
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-sm font-medium text-gray-900 group-hover:text-green-600 transition line-clamp-2">{{ $item->judul }}</h4>

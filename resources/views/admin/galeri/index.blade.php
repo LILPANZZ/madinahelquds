@@ -78,7 +78,7 @@
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             @forelse($galeris as $galeri)
                 <div class="relative group rounded-lg overflow-hidden shadow-sm border">
-                    <img src="{{ '/storage/' . (is_array($galeri->gambar) && count($galeri->gambar) > 0 ? $galeri->gambar[0] : $galeri->gambar) }}" alt="{{ $galeri->judul }}" class="w-full h-48 object-cover">
+                    <img src="{{ asset('storage/' . (is_array($galeri->gambar) && count($galeri->gambar) > 0 ? $galeri->gambar[0] : $galeri->gambar)) }}" alt="{{ $galeri->judul }}" class="w-full h-48 object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div class="flex gap-2">
                             <button onclick="editGaleri({{ $galeri->id }})" class="bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition" title="Edit">
@@ -207,7 +207,7 @@ document.querySelectorAll('[id^="edit-modal-"]').forEach(modal => {
                                         <div class="flex flex-wrap gap-4">
                                             @foreach($images as $img)
                                                 <div class="relative w-20 h-20 rounded border border-gray-200 overflow-hidden shadow-sm group img-item">
-                                                    <img src="{{ '/storage/' . $img }}" class="w-full h-full object-cover">
+                                                    <img src="{{ asset('storage/' . $img) }}" class="w-full h-full object-cover">
                                                     <button type="button" onclick="removeImage('{{ $img }}', this)" style="position: absolute; top: 4px; right: 4px; z-index: 50; background-color: #ef4444; color: white; border-radius: 9999px; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; cursor: pointer; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2);" title="Hapus foto ini">X</button>
                                                 </div>
                                             @endforeach
@@ -240,7 +240,7 @@ document.querySelectorAll('[id^="edit-modal-"]').forEach(modal => {
                                 </p>
                                 <div class="border-2 border-dashed border-gray-200 rounded-xl p-2">
                                     <div class="relative group overflow-hidden rounded-xl aspect-square">
-                                        <img id="edit-img-{{ $galeri->id }}" src="{{ '/storage/' . (is_array($galeri->gambar) && count($galeri->gambar) > 0 ? $galeri->gambar[0] : $galeri->gambar) }}" alt="preview" class="w-full h-full object-cover">
+                                        <img id="edit-img-{{ $galeri->id }}" src="{{ asset('storage/' . (is_array($galeri->gambar) && count($galeri->gambar) > 0 ? $galeri->gambar[0] : $galeri->gambar)) }}" alt="preview" class="w-full h-full object-cover">
                                         <div class="absolute inset-0 bg-gradient-to-t from-[#1e3a5f]/90 to-transparent flex items-end p-4">
                                             <div>
                                                 <span id="edit-judul-{{ $galeri->id }}" class="text-white text-sm font-medium block">{{ $galeri->judul }}</span>

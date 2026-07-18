@@ -15,7 +15,7 @@
         <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
             <!-- Image -->
             <div class="w-full h-64 md:h-80 overflow-hidden">
-                <img src="{{ '/storage/' . (is_array($kegiatan->foto) && count($kegiatan->foto) > 0 ? $kegiatan->foto[0] : '') }}" alt="{{ $kegiatan->judul }}" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800'">
+                <img src="{{ asset('storage/' . (is_array($kegiatan->foto) && count($kegiatan->foto) > 0 ? $kegiatan->foto[0] : '')) }}" alt="{{ $kegiatan->judul }}" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800'">
             </div>
 
             <!-- Content -->

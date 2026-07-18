@@ -86,7 +86,7 @@
                      data-deskripsi="{{ $item->deskripsi }}"
                      data-kapasitas="{{ $item->jumlah_kapasitas }}"
                      data-kategori="{{ $item->kategori }}">
-                    <img src="{{ '/storage/' . ((is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : (is_string($item->gambar) && $item->gambar ? $item->gambar : ''))) }}" alt="{{ $item->nama }}" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?w=400'">
+                    <img src="{{ asset('storage/' . ((is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : (is_string($item->gambar) && $item->gambar ? $item->gambar : '')))) }}" alt="{{ $item->nama }}" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?w=400'">
                     <div class="p-5">
                         <span class="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded">{{ $item->kategori }}</span>
                         <h3 class="font-bold text-gray-900 mt-2 text-lg">{{ $item->nama }}</h3>

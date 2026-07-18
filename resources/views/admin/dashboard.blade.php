@@ -85,7 +85,7 @@
                 @forelse(\App\Models\Berita::latest()->take(5)->get() as $berita)
                     <tr class="border-b hover:bg-gray-50">
                         <td class="py-3 px-4">
-                            <img src="{{ '/storage/' . $berita->gambar }}" alt="{{ $berita->judul }}" class="w-16 h-12 object-cover rounded">
+                            <img src="{{ asset('storage/' . $berita->gambar) }}" alt="{{ $berita->judul }}" class="w-16 h-12 object-cover rounded">
                         </td>
                         <td class="py-3 px-4">
                             <p class="font-medium text-gray-800">{{ $berita->judul }}</p>

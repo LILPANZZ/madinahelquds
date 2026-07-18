@@ -92,7 +92,7 @@
             @forelse($fasilitas as $item)
             <div class="border border-gray-200 rounded-lg overflow-hidden">
                 <div class="w-full h-32 overflow-hidden">
-                    <img src="{{ '/storage/' . (is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : $item->gambar) }}" alt="{{ $item->nama }}" class="w-full h-full object-cover">
+                    <img src="{{ asset('storage/' . (is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : $item->gambar)) }}" alt="{{ $item->nama }}" class="w-full h-full object-cover">
                 </div>
                 <div class="p-4">
                     <span class="inline-block px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded mb-2">{{ $item->kategori }}</span>
@@ -174,7 +174,7 @@
                                         <div class="flex flex-wrap gap-4">
                                             @foreach($images as $img)
                                                 <div class="relative w-20 h-20 rounded border border-gray-200 overflow-hidden shadow-sm group img-item">
-                                                    <img src="{{ '/storage/' . $img }}" class="w-full h-full object-cover">
+                                                    <img src="{{ asset('storage/' . $img) }}" class="w-full h-full object-cover">
                                                     <button type="button" onclick="removeImage('{{ $img }}', this)" style="position: absolute; top: 4px; right: 4px; z-index: 50; background-color: #ef4444; color: white; border-radius: 9999px; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; cursor: pointer; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2);" title="Hapus gambar ini">X</button>
                                                 </div>
                                             @endforeach
@@ -208,7 +208,7 @@
                             <div class="border-2 border-dashed border-gray-200 rounded-xl p-2">
                                 <div class="text-center group block">
                                     <div class="rounded-xl overflow-hidden shadow-lg mb-4">
-                                        <img id="edit-img-{{ $item->id }}" src="{{ '/storage/' . (is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : $item->gambar) }}" alt="preview" class="w-full h-48 object-cover">
+                                        <img id="edit-img-{{ $item->id }}" src="{{ asset('storage/' . (is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : $item->gambar)) }}" alt="preview" class="w-full h-48 object-cover">
                                     </div>
                                     <h4 id="edit-nama-{{ $item->id }}" class="font-bold text-gray-900 text-lg">{{ $item->nama }}</h4>
                                     <p id="edit-kapasitas-{{ $item->id }}" class="text-gray-600 text-sm mt-1">{{ $item->jumlah_kapasitas }}</p>
@@ -350,7 +350,7 @@ function closeEditModal(id) {
                             <div class="border-2 border-dashed border-gray-200 rounded-xl p-2">
                                 <div class="text-center group block">
                                     <div class="rounded-xl overflow-hidden shadow-lg mb-4">
-                                        <img id="edit-img-{{ $item->id }}" src="{{ '/storage/' . (is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : $item->gambar) }}" alt="preview" class="w-full h-48 object-cover">
+                                        <img id="edit-img-{{ $item->id }}" src="{{ asset('storage/' . (is_array($item->gambar) && count($item->gambar) > 0 ? $item->gambar[0] : $item->gambar)) }}" alt="preview" class="w-full h-48 object-cover">
                                     </div>
                                     <h4 id="edit-nama-{{ $item->id }}" class="font-bold text-gray-900 text-lg">{{ $item->nama }}</h4>
                                     <p id="edit-kapasitas-{{ $item->id }}" class="text-gray-600 text-sm mt-1">{{ $item->jumlah_kapasitas }}</p>

@@ -106,7 +106,7 @@
                     @forelse($beritas as $berita)
                         <tr class="border-b hover:bg-gray-50">
                             <td class="py-3 px-4">
-                                <img src="{{ '/storage/' . (is_array($berita->gambar) && count($berita->gambar) > 0 ? $berita->gambar[0] : $berita->gambar) }}" alt="{{ $berita->judul }}" class="w-20 h-14 object-cover rounded">
+                                <img src="{{ asset('storage/' . (is_array($berita->gambar) && count($berita->gambar) > 0 ? $berita->gambar[0] : $berita->gambar)) }}" alt="{{ $berita->judul }}" class="w-20 h-14 object-cover rounded">
                             </td>
                             <td class="py-3 px-4">
                                 <p class="font-medium text-gray-800">{{ $berita->judul }}</p>
@@ -268,7 +268,7 @@ updatePreview();
                                                     <div class="flex flex-wrap gap-4">
                                                         @foreach($images as $img)
                                                             <div class="relative w-20 h-20 rounded border border-gray-200 overflow-hidden shadow-sm group img-item">
-                                                                <img src="{{ '/storage/' . $img }}" class="w-full h-full object-cover">
+                                                                <img src="{{ asset('storage/' . $img) }}" class="w-full h-full object-cover">
                                                                 <button type="button" onclick="removeImage('{{ $img }}', this)" style="position: absolute; top: 4px; right: 4px; z-index: 50; background-color: #ef4444; color: white; border-radius: 9999px; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; cursor: pointer; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2);" title="Hapus foto ini">X</button>
                                                             </div>
                                                         @endforeach
@@ -301,7 +301,7 @@ updatePreview();
                                         </p>
                                         <div class="border-2 border-dashed border-gray-200 rounded-xl p-1">
                                             <div class="bg-white rounded-xl overflow-hidden shadow-md">
-                                                <img id="edit-img-{{ $berita->id }}" src="{{ '/storage/' . (is_array($berita->gambar) && count($berita->gambar) > 0 ? $berita->gambar[0] : $berita->gambar) }}" alt="preview" class="w-full h-48 object-cover">
+                                                <img id="edit-img-{{ $berita->id }}" src="{{ asset('storage/' . (is_array($berita->gambar) && count($berita->gambar) > 0 ? $berita->gambar[0] : $berita->gambar)) }}" alt="preview" class="w-full h-48 object-cover">
                                                 <div class="p-5">
                                                     <span id="edit-tanggal-{{ $berita->id }}" class="text-xs text-green-600 font-medium">{{ $berita->tanggal->format('d M Y') }}</span>
                                                     <h3 id="edit-judul-{{ $berita->id }}" class="font-bold text-gray-900 mt-2 mb-2">{{ $berita->judul }}</h3>

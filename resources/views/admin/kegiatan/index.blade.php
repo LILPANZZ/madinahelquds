@@ -107,7 +107,7 @@
         <div class="space-y-4">
             @forelse($kegiatans as $kegiatan)
             <div class="flex gap-4 p-4 border border-gray-200 rounded-lg">
-                <img src="{{ '/storage/' . (is_array($kegiatan->foto) && count($kegiatan->foto) > 0 ? $kegiatan->foto[0] : $kegiatan->foto) }}" alt="{{ $kegiatan->judul }}" class="w-20 h-20 object-cover rounded-lg flex-shrink-0">
+                <img src="{{ asset('storage/' . (is_array($kegiatan->foto) && count($kegiatan->foto) > 0 ? $kegiatan->foto[0] : $kegiatan->foto)) }}" alt="{{ $kegiatan->judul }}" class="w-20 h-20 object-cover rounded-lg flex-shrink-0">
                 <div class="flex-1">
                     <div class="flex justify-between items-start">
                         <div>
@@ -215,7 +215,7 @@
                                         <div class="flex flex-wrap gap-4">
                                             @foreach($images as $img)
                                                 <div class="relative w-20 h-20 rounded border border-gray-200 overflow-hidden shadow-sm group img-item">
-                                                    <img src="{{ '/storage/' . $img }}" class="w-full h-full object-cover">
+                                                    <img src="{{ asset('storage/' . $img) }}" class="w-full h-full object-cover">
                                                     <button type="button" onclick="removeImage('{{ $img }}', this)" style="position: absolute; top: 4px; right: 4px; z-index: 50; background-color: #ef4444; color: white; border-radius: 9999px; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; cursor: pointer; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2);" title="Hapus foto ini">X</button>
                                                 </div>
                                             @endforeach
@@ -248,7 +248,7 @@
                             </p>
                             <div class="border-2 border-dashed border-gray-200 rounded-xl p-2">
                                 <div class="flex gap-4 p-4 border border-gray-200 rounded-lg bg-white">
-                                    <img id="edit-img-{{ $kegiatan->id }}" src="{{ '/storage/' . (is_array($kegiatan->foto) && count($kegiatan->foto) > 0 ? $kegiatan->foto[0] : $kegiatan->foto) }}" alt="preview" class="w-20 h-20 object-cover rounded-lg flex-shrink-0">
+                                    <img id="edit-img-{{ $kegiatan->id }}" src="{{ asset('storage/' . (is_array($kegiatan->foto) && count($kegiatan->foto) > 0 ? $kegiatan->foto[0] : $kegiatan->foto)) }}" alt="preview" class="w-20 h-20 object-cover rounded-lg flex-shrink-0">
                                     <div class="flex-1">
                                         <h4 id="edit-judul-{{ $kegiatan->id }}" class="font-semibold text-gray-800">{{ $kegiatan->judul }}</h4>
                                         <p class="text-sm text-gray-500 mt-1">
@@ -432,7 +432,7 @@ function closeEditModal(id) {
                             </p>
                             <div class="border-2 border-dashed border-gray-200 rounded-xl p-2">
                                 <div class="flex gap-4 p-4 border border-gray-200 rounded-lg bg-white">
-                                    <img id="edit-img-{{ $kegiatan->id }}" src="{{ '/storage/' . (is_array($kegiatan->foto) && count($kegiatan->foto) > 0 ? $kegiatan->foto[0] : $kegiatan->foto) }}" alt="preview" class="w-20 h-20 object-cover rounded-lg flex-shrink-0">
+                                    <img id="edit-img-{{ $kegiatan->id }}" src="{{ asset('storage/' . (is_array($kegiatan->foto) && count($kegiatan->foto) > 0 ? $kegiatan->foto[0] : $kegiatan->foto)) }}" alt="preview" class="w-20 h-20 object-cover rounded-lg flex-shrink-0">
                                     <div class="flex-1">
                                         <h4 id="edit-judul-{{ $kegiatan->id }}" class="font-semibold text-gray-800">{{ $kegiatan->judul }}</h4>
                                         <p class="text-sm text-gray-500 mt-1">
