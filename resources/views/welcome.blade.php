@@ -560,7 +560,7 @@
                 <button type="button" onclick="document.getElementById('p-lightbox-img-container').scrollBy({left: -document.getElementById('p-lightbox-img-container').clientWidth, behavior: 'smooth'})" class="absolute left-2 top-1/2 -translate-y-1/2 text-white w-10 h-10 shadow-lg   flex items-center justify-center rounded-full opacity-70 hover:opacity-100 transition-opacity hover:bg-black/70 slider-btn slider-btn-left">&#10094;</button>
                 <button type="button" onclick="document.getElementById('p-lightbox-img-container').scrollBy({left: document.getElementById('p-lightbox-img-container').clientWidth, behavior: 'smooth'})" class="absolute right-2 top-1/2 -translate-y-1/2 text-white w-10 h-10 shadow-lg   flex items-center justify-center rounded-full opacity-70 hover:opacity-100 transition-opacity hover:bg-black/70 slider-btn slider-btn-right">&#10095;</button>
             </div>
-                <div class="p-6 overflow-y-auto flex-1">
+                <div class="p-6 overflow-y-auto flex-1 min-h-0">
                     <div class="flex justify-between items-start mb-2">
                         <h3 id="p-lightbox-judul" class="text-2xl font-bold text-gray-900"></h3>
                         <span id="p-lightbox-kategori" class="text-xs font-medium bg-green-100 text-green-700 px-3 py-1 rounded-full whitespace-nowrap ml-4"></span>
@@ -585,7 +585,7 @@
                 <button type="button" onclick="document.getElementById('f-lightbox-img-container').scrollBy({left: -document.getElementById('f-lightbox-img-container').clientWidth, behavior: 'smooth'})" class="absolute left-2 top-1/2 -translate-y-1/2 text-white w-10 h-10 shadow-lg   flex items-center justify-center rounded-full opacity-70 hover:opacity-100 transition-opacity hover:bg-black/70 slider-btn slider-btn-left">&#10094;</button>
                 <button type="button" onclick="document.getElementById('f-lightbox-img-container').scrollBy({left: document.getElementById('f-lightbox-img-container').clientWidth, behavior: 'smooth'})" class="absolute right-2 top-1/2 -translate-y-1/2 text-white w-10 h-10 shadow-lg   flex items-center justify-center rounded-full opacity-70 hover:opacity-100 transition-opacity hover:bg-black/70 slider-btn slider-btn-right">&#10095;</button>
             </div>
-                <div class="p-6 overflow-y-auto flex-1">
+                <div class="p-6 overflow-y-auto flex-1 min-h-0">
                     <div class="flex justify-between items-start mb-2">
                         <h3 id="f-lightbox-judul" class="text-2xl font-bold text-gray-900"></h3>
                         <span id="f-lightbox-kategori" class="text-xs font-medium bg-green-100 text-green-700 px-3 py-1 rounded-full whitespace-nowrap ml-4"></span>
@@ -611,7 +611,7 @@
                 <button type="button" onclick="document.getElementById('e-lightbox-img-container').scrollBy({left: -document.getElementById('e-lightbox-img-container').clientWidth, behavior: 'smooth'})" class="absolute left-2 top-1/2 -translate-y-1/2 text-white w-10 h-10 shadow-lg   flex items-center justify-center rounded-full opacity-70 hover:opacity-100 transition-opacity hover:bg-black/70 slider-btn slider-btn-left">&#10094;</button>
                 <button type="button" onclick="document.getElementById('e-lightbox-img-container').scrollBy({left: document.getElementById('e-lightbox-img-container').clientWidth, behavior: 'smooth'})" class="absolute right-2 top-1/2 -translate-y-1/2 text-white w-10 h-10 shadow-lg   flex items-center justify-center rounded-full opacity-70 hover:opacity-100 transition-opacity hover:bg-black/70 slider-btn slider-btn-right">&#10095;</button>
             </div>
-                <div class="p-6 overflow-y-auto flex-1">
+                <div class="p-6 overflow-y-auto flex-1 min-h-0">
                     <div class="flex justify-between items-start mb-2">
                         <h3 id="e-lightbox-judul" class="text-2xl font-bold text-gray-900"></h3>
                         <span id="e-lightbox-tanggal" class="text-xs font-medium bg-green-100 text-green-700 px-3 py-1 rounded-full whitespace-nowrap ml-4"></span>
@@ -631,7 +631,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
             </button>
-            <div class="relative bg-[#1e3a5f] rounded-xl overflow-hidden flex flex-col shadow-2xl">
+            <div class="relative bg-[#1e3a5f] rounded-xl overflow-hidden flex flex-col max-h-[90vh] shadow-2xl">
                 <div class="w-full bg-gray-900 flex items-center justify-center h-[45vh] sm:h-[55vh]">
                     <div class="relative w-full h-[45vh] sm:h-[55vh] group bg-gray-100">
                 <div id="g-lightbox-img-container" class="flex overflow-x-auto snap-x snap-mandatory w-full h-full scroll-smooth" style="scrollbar-width: none;"></div>
@@ -639,7 +639,7 @@
                 <button type="button" onclick="document.getElementById('g-lightbox-img-container').scrollBy({left: document.getElementById('g-lightbox-img-container').clientWidth, behavior: 'smooth'})" class="absolute right-2 top-1/2 -translate-y-1/2 text-white w-10 h-10 shadow-lg   flex items-center justify-center rounded-full opacity-70 hover:opacity-100 transition-opacity hover:bg-black/70 slider-btn slider-btn-right">&#10095;</button>
             </div>
                 </div>
-                <div class="p-6 max-h-[35vh] overflow-y-auto">
+                <div class="p-6 overflow-y-auto flex-1 min-h-0">
                     <h3 id="g-lightbox-judul" class="text-xl font-bold text-white mb-2"></h3>
                     <p id="g-lightbox-deskripsi" class="text-gray-200 text-sm leading-relaxed whitespace-pre-wrap"></p>
                 </div>

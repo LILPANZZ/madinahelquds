@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Kegiatan - Admin Madinah El-Quds')
-@section('page-title', 'Kegiatan')
+@section('title', 'Kegiatan Ekstrakurikuler - Admin Madinah El-Quds')
+@section('page-title', 'Kegiatan Ekstrakurikuler')
 
 @section('content')
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
@@ -11,7 +11,7 @@
             <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
             </svg>
-            Tambah Kegiatan Baru
+            Tambah Kegiatan Ekstrakurikuler Baru
         </h3>
 
         <form action="{{ route('admin.kegiatan.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
@@ -103,7 +103,7 @@
 
     <!-- Daftar Kegiatan -->
     <div class="lg:col-span-2 bg-white rounded-lg shadow-sm p-6 order-3">
-        <h3 class="text-lg font-semibold text-gray-800 mb-4">Daftar Kegiatan</h3>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Daftar Kegiatan Ekstrakurikuler</h3>
         <div class="space-y-4">
             @forelse($kegiatans as $kegiatan)
             <div class="flex gap-4 p-4 border border-gray-200 rounded-lg">

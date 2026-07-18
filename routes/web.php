@@ -25,7 +25,6 @@ Route::get('/', function () {
         })
         ->orderByRaw("FIELD(kategori, 'penting', 'akademik', 'kegiatan', 'umum')")
         ->latest()
-        ->take(5)
         ->get();
     $prestasis = \App\Models\Prestasi::latest('tanggal')->take(6)->get(); // ✅ tambahkan ini
     $profil = \App\Models\Profil::first();
